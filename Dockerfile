@@ -19,6 +19,10 @@ COPY --from=buildstage /app/target/producto-1.0-SNAPSHOT.jar /app/app.jar
 COPY Wallet_ZGBH6XV4VHFG9ZKV /app/wallet
 
 ENV TNS_ADMIN=/app/wallet
-EXPOSE 8080
+EXPOSE 8081
 
 ENTRYPOINT [ "java", "-jar","/app/app.jar" ]
+
+#docker build --no-cache -t producto_back .
+#docker run -d --name producto_back -p 8081:8081 producto_back
+#docker run -d --name producto_back -p 8081:8081 jorgsanchezm/producto_back:v2
