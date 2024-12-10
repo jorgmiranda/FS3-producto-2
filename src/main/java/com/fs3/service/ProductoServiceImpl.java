@@ -45,5 +45,12 @@ public class ProductoServiceImpl implements ProductoService {
         productoRepository.deleteById(id);
     }
 
+    @Override
+    public List<Producto> getProductosByCategoria(String categoria) {
+       return productoRepository.findByTipoProducto(categoria);
+    }
+
+    
+
 }
 

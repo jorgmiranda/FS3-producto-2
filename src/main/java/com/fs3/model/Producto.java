@@ -19,20 +19,20 @@ public class Producto {
     @Column(name = "precio_producto")
     private int precio;
     @Column(name = "categoria_producto")
-    private String categoria;
+    private String tipoProducto;
     @Column(name = "url_imagen_producto")
-    private String urlImagen;
+    private String urlImg;
     
     public Producto() {
     }
 
-    public Producto(Long id, String nombre, String descripcion, int precio, String categoria, String urlImagen) {
+    public Producto(Long id, String nombre, String descripcion, int precio, String tipoProducto, String urlImagen) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
-        this.categoria = categoria;
-        this.urlImagen = urlImagen;
+        this.tipoProducto = tipoProducto;
+        this.urlImg = urlImagen;
     }
 
     public Long getId() {
@@ -67,20 +67,24 @@ public class Producto {
         this.precio = precio;
     }
 
-    public String getCategoria() {
-        return categoria;
+    
+
+    
+
+    public String getTipoProducto() {
+        return tipoProducto;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setTipoProducto(String tipoProducto) {
+        this.tipoProducto = tipoProducto;
     }
 
-    public String getUrlImagen() {
-        return urlImagen;
+    public String getUrlImg() {
+        return urlImg;
     }
 
-    public void setUrlImagen(String urlImagen) {
-        this.urlImagen = urlImagen;
+    public void setUrlImg(String urlImg) {
+        this.urlImg = urlImg;
     }
 
     
