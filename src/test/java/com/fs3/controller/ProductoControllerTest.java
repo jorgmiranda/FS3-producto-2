@@ -42,6 +42,7 @@ public class ProductoControllerTest {
         assertEquals(productos, response);
     }
 
+    @SuppressWarnings("unchecked")
     @Test
     public void testGetProductoByID() {
         // Configuración
