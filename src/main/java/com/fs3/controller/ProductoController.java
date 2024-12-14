@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +22,7 @@ import com.fs3.model.Producto;
 import com.fs3.service.ProductoService;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200") 
 @RequestMapping("/productos")
 public class ProductoController {
     private static final Logger log = LoggerFactory.getLogger(ProductoController.class);
@@ -42,6 +44,12 @@ public class ProductoController {
         }
         return ResponseEntity.ok(producto);
     }
+
+    @GetMapping("/tipo/{categoria}")
+    public List<Producto> getProductoByCategoria(@PathVariable String categoria) {
+        return productoService.getProductosByCategoria(categoria);
+    }
+
 
     @PostMapping
     public ResponseEntity<Object> crearProducto(@RequestBody Producto producto){
@@ -75,7 +83,8 @@ public class ProductoController {
         }
 
         productoService.eliminarProducto(id);
-        return ResponseEntity.ok("Producto eliminado");
+        // return ResponseEntity.ok("Producto eliminado");
+        return ResponseEntity.noContent().build();
     }
 
 
