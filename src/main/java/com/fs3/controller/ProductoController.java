@@ -22,7 +22,7 @@ import com.fs3.model.Producto;
 import com.fs3.service.ProductoService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200") 
+@CrossOrigin(origins = "http://ip172-18-0-31-ctee5d291nsg00ftqsog-80.direct.labs.play-with-docker.com") 
 @RequestMapping("/productos")
 public class ProductoController {
     private static final Logger log = LoggerFactory.getLogger(ProductoController.class);
