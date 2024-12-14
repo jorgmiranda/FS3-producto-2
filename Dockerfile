@@ -23,6 +23,6 @@ EXPOSE 8081
 
 ENTRYPOINT [ "java", "-jar","/app/app.jar" ]
 
-#docker build --no-cache -t producto_back .
-#docker run -d --name producto_back -p 8081:8081 producto_back
+#docker build --no-cache -t jorgsanchezm/producto_back:latest .
+#docker run -d --name producto_back -p 8081:8081 jorgsanchezm/producto_back
 #docker run -d --name producto_back -p 8081:8081 jorgsanchezm/producto_back:v2
